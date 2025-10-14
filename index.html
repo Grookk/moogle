@@ -137,6 +137,17 @@
 		try {
 			embeddedservice_bootstrap.settings.language = 'fr'; // For example, enter 'en' or 'en-US'
 			
+			embedded_svc.settings.extraPrechatInfo = [{
+			  "entityFieldMaps": [{
+				"doCreate":false,
+				"doFind":true,
+				"fieldName":"SellerID__c",
+				"isExactMatch":true,
+				"label":"Seller ID"
+			  }],
+			  "entityName":"Account"
+			}];
+			
 			window.addEventListener("onEmbeddedMessagingReady", () => {
 				console.log("Received the onEmbeddedMessagingReady event…");
 				// Send data to Salesforce
